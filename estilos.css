@@ -8,4 +8,43 @@
     height: 600px;
     width: 800px;
     background: #09024b;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows:1fr 1fr 1fr ;
+    gap: 40px 20px;
+}
+
+[class^="item"]{
+    color: white;
+}
+
+.item1{
+    background:#cfa107 ;
+    /*grid-column-start: 1;
+    grid-column-end: 5;*/
+    /* grid-column: 1 / 5; */ /*empieza en uno y termina en la linea 5  */
+    /* grid-column: span 4; /*expande 4 lineas de grid*/ 
+    grid-column: 1/ -1; /*expande hasta el final, tambien puedes usar end creo :)*/
+
+}
+
+.item2{
+    background-color: aqua;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.item3{
+    background-color: blue;
+    grid-column-start:4 ;
+    grid-column-end:5 ;
+    grid-row-start: 2;
+    grid-row-end:4 ;
+    
+}
+.item4{
+    background-color:blueviolet ;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
