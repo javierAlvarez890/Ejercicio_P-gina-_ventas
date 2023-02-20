@@ -5,14 +5,20 @@
 }
 
 .container{
-    height: 600px;
-    width: 800px;
+    height: 100vh;
+    width: 100%;
     background: #09024b;
     display: grid;
     /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows:1fr 1fr 1fr ;
-    gap: 40px 20px;
+    /* grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:1fr 2fr 1fr ; */
+    /* gap: 10px 20px; */
+    grid:1fr 2fr 1fr / repeat(4,1fr);
+    grid-gap: 10px;
+    grid-template-areas: 
+    "Header Header Header ."
+    "Main Main Main Sidebar" 
+    "Footer Footer Footer Sidebar";
 }
 
 [class^="item"]{
@@ -25,26 +31,28 @@
     grid-column-end: 5;*/
     /* grid-column: 1 / 5; */ /*empieza en uno y termina en la linea 5  */
     /* grid-column: span 4; /*expande 4 lineas de grid*/ 
-    grid-column: 1/ -1; /*expande hasta el final, tambien puedes usar end creo :)*/
-
+    /* grid-column: 1/ -1; expande hasta el final, tambien puedes usar end creo :) */
+    grid-area: Header;
 }
 
 .item2{
     background-color: aqua;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+    grid-area: Main;
 }
 
 .item3{
     background-color: blue;
-    grid-column-start:4 ;
+    /* grid-column-start:4 ;
     grid-column-end:5 ;
     grid-row-start: 2;
-    grid-row-end:4 ;
-    
+    grid-row-end:4 ; */
+    grid-area: Sidebar;
 }
 .item4{
     background-color:blueviolet ;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+    grid-area: Footer;
 }
